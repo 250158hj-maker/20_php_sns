@@ -195,9 +195,9 @@ class Tweet
             $data['image_path'] = $this->uploadImage();
 
             $pdo = Database::getInstance();
-            // TODO: tweets テーブルにデータを追加：INSERT
-            // (user_id, message, image_path)
-            $sql = '';
+
+            $sql = 'INSERT INTO tweets (user_id, message, image_path)
+                    VALUES (:user_id, :message, :image_path)';
             $stmt = $pdo->prepare($sql);
             $result = $stmt->execute($data);
             if ($result) {
