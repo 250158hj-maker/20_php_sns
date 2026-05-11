@@ -19,12 +19,13 @@ if (!isset($auth_user)) return;
                 </span>
             </div>
             <div class="tweet-message mt-1 text-slate-800 text-sm leading-relaxed" data-id="<?= (int) $tweet['id'] ?>">
-                <?= nl2br(h($tweet['message'])) ?>
+                <a href="home/detail.php?id=<?= (int) $tweet['id'] ?>" class="cursor-pointer">
+                    <?= nl2br(h($tweet['message'])) ?>
+                </a>
             </div>
 
             <?php if (!empty($tweet['image_path'])) : ?>
                 <div class="mt-2">
-                    <!-- TODO: src に 画像(image_path)を表示 -->
                     <img src="<?= h($tweet['image_path']) ?>" class="rounded-xl max-w-sm max-h-80 object-cover border border-slate-100" alt="">
                 </div>
             <?php endif; ?>
