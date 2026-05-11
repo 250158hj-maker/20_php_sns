@@ -19,7 +19,6 @@
                 <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
                     <?php foreach ($tweets as $tweet) : ?>
                         <a href="home/detail.php?id=<?= (int) $tweet['id'] ?>" class="block overflow-hidden rounded-xl bg-white border border-slate-100 hover:shadow-md transition">
-                            <!-- TODO: srcに画像(image_path) -->
                             <img src="<?= h($tweet['image_path']) ?>" alt="" class="w-full h-48 object-cover hover:scale-105 transition-transform duration-200">
                         </a>
                     <?php endforeach; ?>
