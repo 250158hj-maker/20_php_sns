@@ -61,9 +61,6 @@ class Tweet
             'keyword' => "%{$normalized}%",
             'keyword_spaced' => "%{$spaced}%",
         ];
-        // TODO: 検索パラメータ: 
-        // 'keyword' => "%{$normalized}%",
-        // 'keyword_spaced' => "%{$spaced}%",
 
         return $this->fetchTweets($where, $params, $auth_user_id, $limit);
     }
