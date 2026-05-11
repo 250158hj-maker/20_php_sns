@@ -15,18 +15,17 @@ if (!isset($auth_user)) return;
                 <span class="text-slate-400 text-sm">@<?= h($tweet['account_name']) ?></span>
                 <span class="text-slate-400 text-sm">·</span>
                 <span class="text-slate-400 text-sm">
-                    <?= h($tweet['created_at']) ?>
+                    <?= h(date('Y年m月d日', strtotime($tweet['created_at']))) ?>
                 </span>
             </div>
             <div class="tweet-message mt-1 text-slate-800 text-sm leading-relaxed" data-id="<?= (int) $tweet['id'] ?>">
-                TODO: メッセージリンク: home/detail.php?id= でGETパラメータ
-                TODO: メッセージ(message)を改行つきで表示
+                <?= nl2br(h($tweet['message'])) ?>
             </div>
 
             <?php if (!empty($tweet['image_path'])) : ?>
                 <div class="mt-2">
                     <!-- TODO: src に 画像(image_path)を表示 -->
-                    <img src="" class="rounded-xl max-w-sm max-h-80 object-cover border border-slate-100" alt="">
+                    <img src="<?= h($tweet['image_path']) ?>" class="rounded-xl max-w-sm max-h-80 object-cover border border-slate-100" alt="">
                 </div>
             <?php endif; ?>
 
