@@ -29,9 +29,7 @@ class HomeController extends AuthenticatedController
 
     public function detail()
     {
-        // TODO: GETパラメータからIDを取得: $_GET['id']
         $id = $_GET['id'] ?? 0;
-        // 投稿IDがなければホームにリダイレクト
         if (!$id) Request::redirect('home/');
 
         // 投稿詳細を取得: 投稿ID、ログインユーザのID
