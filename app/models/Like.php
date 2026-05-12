@@ -42,7 +42,6 @@ class Like
         try {
             // DB接続
             $pdo = Database::getInstance();
-            // TODO: いいねを追加するSQL文: user_id と tweet_id を指定
             $sql = "INSERT INTO likes (user_id, tweet_id)
                     VALUES (:user_id, :tweet_id)";
             // SQL事前準備
@@ -86,7 +85,6 @@ class Like
         try {
             // DB接続
             $pdo = Database::getInstance();
-            // TODO: いいねを削除するSQL文: user_id と tweet_id を指定
             $sql = "DELETE FROM likes
                     WHERE user_id = :user_id
                     AND tweet_id = :tweet_id";
